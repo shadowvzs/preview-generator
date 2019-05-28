@@ -1,0 +1,19 @@
+#thumbnail-container {
+    padding: 10px;
+    background-color: white;
+    border: 1px solid rgba(255, 0, 0, 0.5);
+}
+
+#thumbnail-container img {
+    width: 320px;
+    display: inline-block;
+}
+.my-class {
+    opacity: 0.5;
+    transition: 0.7s;
+}
+.my-class:hover {
+    opacity: 1;
+    box-shadow: 5px 5px 5px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+}

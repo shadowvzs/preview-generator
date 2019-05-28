@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en-US">
+      <head>
+           <meta charset="utf-8" />
+           <title> File Input Preview </title>
+           <link rel="stylesheet" type="text/css" href="css/style.css">
+      </head>
+    <body>
+        <input type="file" accept="video/*, image/*" data-container="#thumbnail-container" multiple>
+        <div id="thumbnail-container"></div>
+        <script src='js/PreviewGenerator.js'></script>
+        <script>
+            'use strict';
+
+            // minimal configs
+            const config = {
+                selector: 'input[type="file"]',
+            }
+
+            // advanced configs
+            /*
+            const config = {
+                mode: 'async',                              // 'async' or 'sync'
+                selector: 'input[type="file"]',             // file input selector, could be any valid selector
+                container: '#thumbnail-container',          // target container selector
+                base64: true,                               // enable base64 source for image previews: slower (10x-50x - not recommended for multiple files) but src is permanent (blob temp url => base64)
+                filter: (file) => file.size < 2097152,      // filter: ex. accept only if file size is smaller than 2mb (1024*1024*2)
+                segment: d => d / 2,                        // [number or function(video duration)!] video segment for preview image, this example go to half (video duration / 2)
+                compression: ['jpeg', 0.75],                // options: (format: 'png|jpeg|webp', quality: 0-1.0)
+                render: (image, file) => {                  // optional image rendering
+                    const div = document.createElement('div');
+                    div.innerHTML = `filename: ${file.name} - type: ${file.type} ${image.outerHTML}`;
+                    div.append(image);
+                    return div;
+                }
+            }
+            */
+            const previewGenerator = new PreviewGenerator(config);
+        </script>
+    </body>
+</html>
