@@ -44,7 +44,7 @@
         compression: ['jpeg', 0.75],
         render: (image, file) => {
             const div = document.createElement('div');
-            div.innerHTML = `filename: ${file.name} - type: ${file.type}`;
+            div.innerHTML = `filename: ${file.name} - type: ${file.type} <div>${image.outerHTML}</div>`;
             return div;
         }
     }
