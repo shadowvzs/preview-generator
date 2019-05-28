@@ -24,7 +24,7 @@ class PreviewGenerator {
         }
         if (!files || !files.length) { return console.error('Need a valid/non empty files object, but we got this ', files); }
 
-        const { mode, filter, limit } = this._config;
+        const { mode, filter, limit, sort } = this._config;
         if (typeof filter === 'function') {
             files = files.filter(file => filter(file));
             if (!files.length) { return console.info('No remaining file after filtering...'); }
@@ -32,7 +32,8 @@ class PreviewGenerator {
 
         const startedAt = performance.now();
         console.clear();
-        if (typeof limit === 'number') { files = files.splice(0, limit); }
+        if (typeof limit === 'number') { files.splice(limit); }
+        if (typeof sort === 'function') { files.sort(sort); }
         this._files = files;
         this._result = [];
 
