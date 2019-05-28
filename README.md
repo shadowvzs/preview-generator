@@ -1,5 +1,7 @@
 # preview-generator
 
+![screenshot about the preview generator](http://shadowvzs.uw.hu/git/images/preview_generator.jpg)
+
 #### Description:
 - extract thumbnail from video file/images without uploading the files 
 
@@ -66,7 +68,7 @@
 
 * **base64** - value is boolean (default is *false*)
   * applied only for images, recommanded if you want create string template in *render* function
-  * drastically decrease the preview generation speed so best if you use it with input with single file
+  * drastically decrease the preview generation speed (1-10ms => 100-200ms) so best if you use it with input with single file
   * if you don't care about string template then use *false* and use the image node
 
 * **compression** - value is array (used for video thumbnails and if base64 is true then to images too):
